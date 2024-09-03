@@ -1,0 +1,43 @@
+* {
+    box-sizing: border-box;
+    background-color: darkred;
+    margin: 0px;
+    padding: 0px;
+}
+
+header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+    height: 100px;
+}
+
+h1 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 30px;
+    color: white;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#gridSizeBtn {
+    background-color: white;
+    color: black;
+    font-family: 'Roboto', sans-serif;
+    border-color: lightgray;
+    border-width: 0px;
+    border-radius: 10px;
+    padding: 10px;
+}
