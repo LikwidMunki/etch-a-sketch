@@ -9,6 +9,7 @@ IF: 'Change Grid Size' Button is pressed, present a prompt with input of how man
 
 const gridSizeBtn = document.getElementById(`gridSizeBtn`);
 const container = document.getElementById(`container`);
+const clearGridBtn = document.getElementById(`clearGridBtn`);
 
 //Set the initial 16x16 grid
 
@@ -27,14 +28,22 @@ const container = document.getElementById(`container`);
             element.style.boxSizing = `border-box`;
             element.style.backgroundColor = `white`;
             row.appendChild(element);
+
+            element.addEventListener(`mouseover`, function (event) {
+                element.style.backgroundColor = `black`;
+            })
         }
         container.appendChild(row);
+
     }
 
 //Function for generating prompt on button click with input
 
 gridSizeBtn.addEventListener(`click`, () => {
- const gridSize = prompt(`Enter the size of the grid`, `16`);
+ const gridSize = prompt(`Enter the size of the grid (no more than 100)`, `16`);
+ if(gridSize > 100){
+    return alert(`Invalid number`);
+ }
  updateGridSize(gridSize);
 });
 
@@ -60,11 +69,13 @@ function updateGridSize(size) {
             element.style.boxSizing = `border-box`;
             element.style.backgroundColor = `white`;
             row.appendChild(element);
+
+            element.addEventListener(`mouseover`, function (event) {
+                element.style.backgroundColor = `black`;
+            })
         }
         container.appendChild(row);
     }
 }
-
-
 
 
