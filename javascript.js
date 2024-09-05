@@ -9,24 +9,47 @@ IF: 'Change Grid Size' Button is pressed, present a prompt with input of how man
 
 const gridSizeBtn = document.getElementById(`gridSizeBtn`);
 const container = document.getElementById(`container`);
-const grid = document.getElementById(`grid`);
+//const grid = document.getElementById(`grid`);
 
 //Function for generating prompt on button click with input
 
 gridSizeBtn.addEventListener(`click`, () => {
  const gridSize = prompt(`Enter the size of the grid`, `16`);
- updateGrid(gridSize);
+ updateGridSize(gridSize);
 });
 
 //Set Default Grid
 const defaultGrid = 16;
 
+//Create canvas
 
+function updateGridSize(size) {
+    document.querySelectorAll(`.grid-box`).forEach((element) => {
+        element.remove;
+    });
 
-//Create square divs
+    //const grid = document.getElementById(`grid`);
+    const boxSize = 400 / size;
 
+    for(let i=0; i < size; i++) {
 
-//Create hover effect
+        const row = document.createElement(`div`);
+        row.style.display = `flex`;
+        row.classList.add(`row`);
+
+        for(let j=0; j < size; j++){
+            const element = document.createElement(`div`);
+            element.className = `grid-box`;
+            element.style.width = `${boxSize}px`;
+            element.style.height = `${boxSize}px`;
+            element.style.border = `1px black solid`;
+            element.style.boxSizing = `border-box`;
+            element.style.backgroundColor = `white`;
+            row.appendChild(element);
+        }
+        container.appendChild(row);
+    }
+}
 
 
 
