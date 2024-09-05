@@ -9,7 +9,6 @@ IF: 'Change Grid Size' Button is pressed, present a prompt with input of how man
 
 const gridSizeBtn = document.getElementById(`gridSizeBtn`);
 const container = document.getElementById(`container`);
-//const grid = document.getElementById(`grid`);
 
 //Function for generating prompt on button click with input
 
@@ -18,17 +17,14 @@ gridSizeBtn.addEventListener(`click`, () => {
  updateGridSize(gridSize);
 });
 
-//Set Default Grid
-const defaultGrid = 16;
-
 //Create canvas
 
 function updateGridSize(size) {
-    document.querySelectorAll(`.grid-box`).forEach((element) => {
+    /* document.querySelectorAll(`.grid-box`).forEach((element) => {
         element.remove;
-    });
+    }); */
+    container.innerHTML = ``;
 
-    //const grid = document.getElementById(`grid`);
     const boxSize = 400 / size;
 
     for(let i=0; i < size; i++) {
